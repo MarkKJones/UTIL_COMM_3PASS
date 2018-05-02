@@ -1,0 +1,44 @@
+block T.coin*
+block g.evtyp
+
+
+
+block H.cal.etracknorm
+block H.cal.etotnorm
+block H.cer.*
+block H.gtr.*
+block H.kin.*
+block H.dc.x_fp
+block H.dc.y_fp
+block H.dc.xp_fp
+block H.dc.yp_fp
+block H.hod.starttime
+block H.rb.*
+block H.react.*
+
+block P.cal.etracknorm
+block P.cal.etotnorm
+block P.gtr.*
+block P.kin.*
+block P.dc.x_fp
+block P.dc.y_fp
+block P.dc.xp_fp
+block P.dc.yp_fp
+block P.hod.starttime
+block P.rb.*
+block P.react.*
+
+TH2D dcref_vs_hodoref 'HMS HODO REF vs. DC REF; HODO REF time; DC REF time' T.coin.hT1_tdcTimeRaw T.coin.hDCREF2_tdcTimeRaw 100 1400 2600 100 14800 16000 
+TH2D shms_dcref_vs_hodoref 'SHMS HODO REF vs. DC REF; HODO REF time; DC REF time' T.coin.pT1_tdcTimeRaw T.coin.pDCREF2_tdcTimeRaw 100 3200 4200 100  13800 15000 
+TH2D raster_frx_hms_shms 'HMS FRXA vs SHMS FRXA; HMS FRXA RAW ADC (chan); SHMS FRXA RAW ADC (chan)'  H.rb.raster.frxaRawAdc  P.rb.raster.frxaRawAdc  1000 0 100000  1000 0 100000
+
+begin epics
+IBC3H00CRCUR4
+hac_bcm_average
+ibcm1
+ibcm2
+iunser
+itov3out
+itov4out
+end epics
+

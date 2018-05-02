@@ -1,0 +1,8 @@
+1280-99999
+g_ctp_parm_filename ="UTIL_COMM_3PASS/DBASE/HMS/GEN/general.param"
+g_ctp_kinematics_filename ="UTIL_COMM_3PASS/DBASE/HMS/STD/standard.kinematics"
+
+
+
+1280-99999
+g_ctp_calib_filename ="UTIL_COMM_3PASS/DBASE/HMS/GEN/calib_1280.param"
