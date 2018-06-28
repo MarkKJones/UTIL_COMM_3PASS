@@ -42,6 +42,9 @@ void replay_production_coin_hElec_pProt (Int_t RunNumber = 0, Int_t MaxEvent = 0
   gHcDetectorMap = new THcDetectorMap();
   gHcDetectorMap->Load("MAPS/COIN/DETEC/coin.map");
 
+  THaDecData* decdata= new THaDecData("D","Decoder raw data");
+  gHaApps->Add(decdata);
+
   //=:=:=:=
   // SHMS 
   //=:=:=:=
@@ -232,7 +235,8 @@ void replay_production_coin_hElec_pProt (Int_t RunNumber = 0, Int_t MaxEvent = 0
   TString DefTreeFile=Form("UTIL_COMM_3PASS/DEF-files/COIN/%s.def",ftype);
   analyzer->SetOdefFile(DefTreeFile);
   // Define cuts file
-  analyzer->SetCutFile("UTIL_COMM_3PASS/DEF-files/COIN/CUTS/coin_production_cuts.def");  // optional
+  TString CutTreeFile=Form("UTIL_COMM_3PASS/DEF-files/COIN/CUTS/%s_cuts.def",ftype);  
+  analyzer->SetCutFile(CutTreeFile);  // optional
   // File to record accounting information for cuts
   analyzer->SetSummaryFile(Form("REPORT_OUTPUT/COIN/PRODUCTION/summary_production_%d_%d.report", RunNumber, MaxEvent));  // optional
   // Start the actual analysis.

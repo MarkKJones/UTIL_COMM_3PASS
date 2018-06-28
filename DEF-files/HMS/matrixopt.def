@@ -11,6 +11,12 @@ block H.cal.etotnorm
 block H.cal.etracknorm
 block H.react.*
 block H.kin.*
+block H.hod.goodscinhit
 block H.hod.beta*
 block H.hod.start*
+block H.cal.eprtrack
+block H.cal.eprtracknorm
+block H.cal.etot
+block H.cal.etottracknorm
+block H.cal.etrack
 

@@ -95,6 +95,21 @@ hTRIG3 :  	{H.hTRIG3.scaler} 	[ {(H.hTRIG3.scaler/H.1Mhz.scalerTime)/1000.:%.3f}
 hTRIG4 :  	{H.hTRIG4.scaler} 	[ {(H.hTRIG4.scaler/H.1Mhz.scalerTime)/1000.:%.3f} kHz ]
 hTRIG5 :  	{H.hTRIG5.scaler} 	[ {(H.hTRIG5.scaler/H.1Mhz.scalerTime)/1000.:%.3f} kHz ]
 hTRIG6 :  	{H.hTRIG6.scaler} 	[ {(H.hTRIG6.scaler/H.1Mhz.scalerTime)/1000.:%.3f} kHz ]
+hL1ACC :  	{H.hL1ACCP.scaler} 	[ {(H.hL1ACCP.scaler/H.1Mhz.scalerTime)/1000.:%.3f} kHz ]
+hEDTM :  	{H.EDTM.scaler} 	[ {(H.EDTM.scaler/H.1Mhz.scalerTime)/1000.:%.3f} kHz ]
+
+=:=:=:=:=:=:=:=:
+= HMS Triggers Chrage cut
+=:=:=:=:=:=:=:=:
+
+hTRIG1 :  	{H.hTRIG1.scalerCut} 	[ {(H.hTRIG1.scalerCut/H.1Mhz.scalerTimeCut)/1000.:%.3f} kHz ]
+hTRIG2 :  	{H.hTRIG2.scalerCut} 	[ {(H.hTRIG2.scalerCut/H.1Mhz.scalerTimeCut)/1000.:%.3f} kHz ]
+hTRIG3 :  	{H.hTRIG3.scalerCut} 	[ {(H.hTRIG3.scalerCut/H.1Mhz.scalerTimeCut)/1000.:%.3f} kHz ]
+hTRIG4 :  	{H.hTRIG4.scalerCut} 	[ {(H.hTRIG4.scalerCut/H.1Mhz.scalerTimeCut)/1000.:%.3f} kHz ]
+hTRIG5 :  	{H.hTRIG5.scalerCut} 	[ {(H.hTRIG5.scalerCut/H.1Mhz.scalerTimeCut)/1000.:%.3f} kHz ]
+hTRIG6 :  	{H.hTRIG6.scalerCut} 	[ {(H.hTRIG6.scalerCut/H.1Mhz.scalerTimeCut)/1000.:%.3f} kHz ]
+hL1ACC :  	{H.hL1ACCP.scalerCut} 	[ {(H.hL1ACCP.scalerCut/H.1Mhz.scalerTimeCut)/1000.:%.3f} kHz ]
+hEDTM :  	{H.EDTM.scalerCut} 	[ {(H.EDTM.scalerCut/H.1Mhz.scalerTimeCut)/1000.:%.3f} kHz ]
 
 =:=:=:=:=:=:=:=:
 = SHMS Triggers

@@ -13,6 +13,8 @@ block H.dc.y_fp
 block H.dc.xp_fp
 block H.dc.yp_fp
 block H.hod.starttime
+block H.hod.betanotrack
+block H.hod.beta
 block H.rb.*
 block H.react.*
 
@@ -25,6 +27,8 @@ block P.dc.y_fp
 block P.dc.xp_fp
 block P.dc.yp_fp
 block P.hod.starttime
+block P.hod.betanotrack
+block P.hod.beta
 block P.rb.*
 block P.react.*
 
