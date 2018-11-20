@@ -282,4 +282,4 @@ SHMS_aero_track_matched_tot P.aero.totNumTracksMatched>0
 SHMS_aero_track_fired_tot P.aero.totNumTracksFired>0
 
 Block: Physics
-Physics_master pcut_cal_elec
+Physics_master 1

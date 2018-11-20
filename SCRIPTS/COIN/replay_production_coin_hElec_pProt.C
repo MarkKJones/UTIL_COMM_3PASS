@@ -33,14 +33,15 @@ void replay_production_coin_hElec_pProt (Int_t RunNumber = 0, Int_t MaxEvent = 0
   gHcParms->Load(gHcParms->GetString("g_ctp_database_filename"), RunNumber);
   gHcParms->Load(gHcParms->GetString("g_ctp_parm_filename"));
   gHcParms->Load(gHcParms->GetString("g_ctp_kinematics_filename"), RunNumber);
+  gHcParms->Load(gHcParms->GetString("g_ctp_calib_filename"));
   // Load params for COIN trigger configuration
-  gHcParms->Load("PARAM/TRIG/tcoin.param");
+  gHcParms->Load("UTIL_COMM_3PASS/PARAM/TRIG/tcoin.param");
   // Load fadc debug parameters
-  gHcParms->Load("PARAM/HMS/GEN/h_fadc_debug.param");
-  gHcParms->Load("PARAM/SHMS/GEN/p_fadc_debug.param");
+  gHcParms->Load("UTIL_COMM_3PASS/PARAM/HMS/GEN/h_fadc_debug.param");
+  gHcParms->Load("UTIL_COMM_3PASS/PARAM/SHMS/GEN/p_fadc_debug.param");
   // Load the Hall C detector map
   gHcDetectorMap = new THcDetectorMap();
-  gHcDetectorMap->Load("MAPS/COIN/DETEC/coin.map");
+  gHcDetectorMap->Load("MAPS/COIN/DETEC/coin_comm18.map");
 
   THaDecData* decdata= new THaDecData("D","Decoder raw data");
   gHaApps->Add(decdata);
@@ -81,7 +82,7 @@ void replay_production_coin_hElec_pProt (Int_t RunNumber = 0, Int_t MaxEvent = 0
   gHaApps->Add(pbeam);
   // Add physics modules
   // Calculate reaction point
-  THaReactionPoint* prp = new THaReactionPoint("P.react", "SHMS reaction point", "P", "P.rb");
+  THcReactionPoint* prp = new THcReactionPoint("P.react", "SHMS reaction point", "P", "P.rb");
   gHaPhysics->Add(prp);
   // Calculate extended target corrections
   THcExtTarCor* pext = new THcExtTarCor("P.extcor", "HMS extended target corrections", "P", "P.react");
@@ -138,7 +139,7 @@ void replay_production_coin_hElec_pProt (Int_t RunNumber = 0, Int_t MaxEvent = 0
   gHaApps->Add(hbeam);  
   // Add physics modules
   // Calculate reaction point
-  THaReactionPoint* hrp = new THaReactionPoint("H.react", "HMS reaction point", "H", "H.rb");
+  THcReactionPoint* hrp = new THcReactionPoint("H.react", "HMS reaction point", "H", "H.rb");
   gHaPhysics->Add(hrp);
   // Calculate extended target corrections
   THcExtTarCor* hext = new THcExtTarCor("H.extcor", "HMS extended target corrections", "H", "H.react");
@@ -186,6 +187,9 @@ void replay_production_coin_hElec_pProt (Int_t RunNumber = 0, Int_t MaxEvent = 0
   coin->SetEvtType(1);
   coin->AddEvtType(2);
   TRG->AddDetector(coin); 
+  //Add coin physics module
+  THcCoinTime* coinTime = new THcCoinTime("CTime", "Coincidende Time Determination", "P", "H", "T.coin");
+  gHaPhysics->Add(coinTime);
   // Add event handler for prestart event 125.
   THcConfigEvtHandler* ev125 = new THcConfigEvtHandler("HC", "Config Event type 125");
   gHaEvtHandlers->Add(ev125);
@@ -236,6 +240,7 @@ void replay_production_coin_hElec_pProt (Int_t RunNumber = 0, Int_t MaxEvent = 0
   analyzer->SetOdefFile(DefTreeFile);
   // Define cuts file
   TString CutTreeFile=Form("UTIL_COMM_3PASS/DEF-files/COIN/CUTS/%s_cuts.def",ftype);  
+  CutTreeFile="UTIL_COMM_3PASS/DEF-files/COIN/CUTS/coin_production_cuts.def";
   analyzer->SetCutFile(CutTreeFile);  // optional
   // File to record accounting information for cuts
   analyzer->SetSummaryFile(Form("REPORT_OUTPUT/COIN/PRODUCTION/summary_production_%d_%d.report", RunNumber, MaxEvent));  // optional

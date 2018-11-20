@@ -40,7 +40,7 @@ void replay_hms(Int_t RunNumber=0, Int_t MaxEvent=0,const char* ftype="matrixopt
 
   // Load the Hall C detector map
   gHcDetectorMap = new THcDetectorMap();
-  gHcDetectorMap->Load("MAPS/HMS/DETEC/STACK/hms_stack.map");
+  gHcDetectorMap->Load("MAPS/HMS/DETEC/STACK/hms_stack_comm18.map");
   gHcParms->Load("PARAM/HMS/GEN/h_fadc_debug.param");
 
   // Add trigger apparatus
@@ -159,8 +159,7 @@ void replay_hms(Int_t RunNumber=0, Int_t MaxEvent=0,const char* ftype="matrixopt
  // Start the actual analysis.
  analyzer->Process(run);
  // Create report file from template.
-   TString TemplateFile=Form("UTIL_COMM_3PASS/TEMPLATES/HMS/%s.template",ftype);
-   analyzer->PrintReport(TemplateFile,
- 			 Form("REPORT_OUTPUT/HMS/PRODUCTION/replay_%s_%d_%d.report",ftype, RunNumber, MaxEvent));  // optional
+    TString TemplateFile=Form("UTIL_COMM_3PASS/TEMPLATES/HMS/%s.template",ftype);
+ analyzer->PrintReport(TemplateFile,			 Form("REPORT_OUTPUT/HMS/PRODUCTION/replay_%s_%d_%d.report",ftype, RunNumber, MaxEvent));  // optional
 
 }

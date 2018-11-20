@@ -1,4 +1,4 @@
-void replay_shms (Int_t RunNumber = 0, Int_t MaxEvent = 0,const char* ftype="cal_calib",const char* rtype="shms") {
+void replay_shms (Int_t RunNumber = 0, Int_t MaxEvent = 0,const char* ftype="matrixopt",const char* rtype="shms") {
 
   // Get RunNumber and MaxEvent if not provided.
   if(RunNumber == 0) {
