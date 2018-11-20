@@ -8,6 +8,12 @@
 # 1722 is last December commissioning run
 # 1751 is first Jan comm run
 # 2241 is first 5 pass run
+0-99999
+gpbeam = 10.59
+gtargmass_amu= 12.0107
+ppartmass =  0.00051099
+ptheta_lab =8.49
+ppcentral = 7.3
 
 2257-2258
 gpbeam = 10.59

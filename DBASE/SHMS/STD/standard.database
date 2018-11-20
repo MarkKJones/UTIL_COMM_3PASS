@@ -6,5 +6,5 @@ g_ctp_parm_filename ="UTIL_COMM_3PASS/DBASE/SHMS/GEN/general.param"
 
 
 0-99999
-g_ctp_calib_filename ="UTIL_COMM_3PASS/DBASE/SHMS/GEN/calib_1586.param"
+g_ctp_calib_filename ="UTIL_COMM_3PASS/DBASE/SHMS/GEN/calib.param"
 
